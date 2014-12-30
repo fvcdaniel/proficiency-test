@@ -18,9 +18,9 @@ Tests:
 
   <tt>bundle exec rspec spec/requests/students_spec.rb</tt>
   
-  <tt>bundle exec rspec spec/requests/students_spec.rb</tt>
+  <tt>bundle exec rspec spec/models/student_spec.rb</tt>
   
-  <tt>bundle exec rspec spec/requests/courses_spec.rb</tt>
+  <tt>bundle exec rspec spec/models/course_spec.rb</tt>
 
 == README
 
