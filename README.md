@@ -2,6 +2,8 @@ Teste de Proficiencia by Daniel Cardoso
 
 github: https://github.com/fvcdaniel/proficiency-test.git
 
+heroku https://proficiency-test-fvcdaniel.herokuapp.com/
+
 Created CRUD Views: Students, Courses
 
 Created Views: home#matricular, home#cancelar_matricula, home#matricula_curso
