@@ -14,11 +14,11 @@ Added bootstrap
 
 Tests: 
 
-  bundle exec rspec spec/requests/students_spec.rb
+  <tt>bundle exec rspec spec/requests/students_spec.rb</tt>
   
-  bundle exec rspec spec/requests/students_spec.rb
+  <tt>bundle exec rspec spec/requests/students_spec.rb</tt>
   
-  bundle exec rspec spec/requests/courses_spec.rb
+  <tt>bundle exec rspec spec/requests/courses_spec.rb</tt>
 
 == README
 
