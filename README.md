@@ -15,7 +15,9 @@ Added bootstrap
 Tests: 
 
   bundle exec rspec spec/requests/students_spec.rb
+  
   bundle exec rspec spec/requests/students_spec.rb
+  
   bundle exec rspec spec/requests/courses_spec.rb
 
 == README
