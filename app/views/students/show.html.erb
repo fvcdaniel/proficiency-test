@@ -1,0 +1,16 @@
+<% provide(:title, 'Visualizar Aluno') %>
+<h1>Visualizar Aluno</h1>
+
+<div class="list-group">
+  <a href="#" class="list-group-item active">
+    <h4 class="list-group-item-heading"><%= @student.name%></h4>
+    <p class="list-group-item-text">Número de Registro: <%= @student.register_number%></p>
+    <p class="list-group-item-text">Status: <%= @student.status%></p>
+  </a>
+</div>
+
+<div class="form-actions">
+    <%= link_to t('.new', :default => t("helpers.links.back")),
+    students_path,
+    :class => 'btn btn-primary btn-sm active' %>
+</div>

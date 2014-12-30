@@ -135,6 +135,20 @@ pt-BR:
       create: Criar %{model}
       submit: Salvar %{model}
       update: Atualizar %{model}
+    actions: 'Ações'
+    links:
+      edit: 'Editar'
+      destroy: 'Deletar'
+      new: 'Novo'
+      cancel: 'Cancelar'
+      back: 'Voltar'
+      select: 'Selecionar'
+    select:
+      prompt: Por favor selecione
+    submit:
+      create: Criar %{model}
+      submit: Salvar %{model}
+      update: Atualizar %{model}
   number:
     currency:
       format:
@@ -207,5 +221,15 @@ pt-BR:
     errors:
       <<: *errors
   activerecord:
+    models:
+      student: 'Aluno'
+      course: 'Curso'
+    attributes:
+      student:
+        name: 'Nome'
+        register_number: 'RG'
+      course:
+        name: 'Nome'
+        description: 'Descrição'
     errors:
       <<: *errors

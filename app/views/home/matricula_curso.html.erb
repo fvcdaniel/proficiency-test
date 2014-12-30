@@ -1,0 +1,82 @@
+<% provide(:title, 'Realizar Matrícula') %>
+<h1>Realizar Matrícula</h1>
+
+<div class="list-group">
+  <a href="#" class="list-group-item">
+    <h4 class="list-group-item-heading">Curso Selecionado: <%= @course.name%></h4>
+    <p class="list-group-item-text">Descrição: <%= @course.description%></p>
+    <p class="list-group-item-text">Status: <%= @course.status == 1 ? 'ATIVO' : 'INATIVO'%></p>
+  </a>
+</div>
+
+<% unless @students.blank? %>
+  <div class="panel panel-primary">
+    <div class="panel-heading">Alunos elegíveis...</div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nome</th>
+          <th>Número de Registro</th>
+          <th>Status</th>
+          <th><%=t '.actions', :default => 'Ações' %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @students.each.with_index do |s,index| %>
+            <tr>
+              <th scope="row"><%= index+1 %></th>
+              <td><%= s.name %></td>
+              <td><%= s.register_number %></td>
+              <td><%= s.status == 1 ? 'ATIVO' : 'INATIVO' %></td>
+              <td>
+                <%= link_to 'Matricular aluno...', matricula_curso_student_path(@course, s), 
+                     :class => 'btn btn-primary btn-sm active', method: :post %>
+              </td>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+    <h2>Nenhum aluno a matricular!</h2>
+<% end %>
+
+<% unless @matriculas.blank? %>
+  <div class="panel panel-success">
+    <div class="panel-heading">Alunos Matriculados...</div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Aluno</th>
+          <th>Curso</th>
+          <th>Data Inscrição</th>
+          <th><%=t '.actions', :default => 'Ações' %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @matriculas.each.with_index do |matricula,index| %>
+            <tr>
+              <th scope="row"><%= index+1 %></th>
+              <td><%= matricula.student.name %></td>
+              <td><%= matricula.course.name %></td>
+              <td><%= matricula.entry_at %></td>
+              <td>
+                <%= link_to 'Cancelar matrícula...', matricula_curso_student_cancela_path(matricula.course, matricula.student), 
+                     :class => 'btn btn-danger btn-sm active', method: :delete %>
+              </td>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+<% else %>
+    <h2>Nenhuma matrícula foi realizada ainda!</h2>
+<% end %>
+
+<div class="form-actions">
+    <%= link_to t('.back', :default => t("helpers.links.back")),
+    matriculas_path,
+    :class => 'btn btn-primary btn-sm active' %>
+</div>

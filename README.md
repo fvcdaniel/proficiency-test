@@ -1,5 +1,20 @@
 Teste de Proficiencia by Daniel Cardoso
 
+github: https://github.com/fvcdaniel/proficiency-test.git
+
+Created CRUD Views: Students, Courses
+Created Views: home#matricular, home#cancelar_matricula, home#matricula_curso
+
+Updated locale rails.yml
+
+Created 5 migrations
+
+Added bootstrap
+
+Tests: 
+  bundle exec rspec spec/requests/students_spec.rb  
+  bundle exec rspec spec/requests/students_spec.rb
+  bundle exec rspec spec/requests/courses_spec.rb
 
 == README
 

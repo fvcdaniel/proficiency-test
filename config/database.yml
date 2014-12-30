@@ -1,9 +1,10 @@
+
 development:
   adapter: postgresql
   encoding: unicode
   database: proficiency-test_development
   pool: 5
-  username: root
+  username: postgres
   password: "123"
 
 test:
@@ -11,5 +12,5 @@ test:
   encoding: unicode
   database: proficiency-test_test
   pool: 5
-  username: root
+  username: postgres
   password: "123"

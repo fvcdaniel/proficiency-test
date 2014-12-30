@@ -1,0 +1,16 @@
+<% provide(:title, 'Visualizar Curso') %>
+<h1>Visualizar Curso</h1>
+
+<div class="list-group">
+  <a href="#" class="list-group-item active">
+    <h4 class="list-group-item-heading"><%= @course.name%></h4>
+    <p class="list-group-item-text">Descrição: <%= @course.description%></p>
+    <p class="list-group-item-text">Status: <%= @course.status == 1 ? 'ATIVO' : 'INATIVO'%></p>
+  </a>
+</div>
+
+<div class="form-actions">
+    <%= link_to t('.new', :default => t("helpers.links.back")),
+    courses_path,
+    :class => 'btn btn-primary btn-sm active' %>
+</div>

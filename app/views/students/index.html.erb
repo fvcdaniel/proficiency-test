@@ -1,0 +1,41 @@
+<% provide(:title, 'Manter Alunos') %>
+<h1>Manter Alunos</h1>
+
+<% unless @students.blank? %>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nome</th>
+          <th>Número de Registro</th>
+          <th>Status</th>
+          <th><%=t '.actions', :default => 'Ações' %></th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @students.each.with_index do |s,index| %>
+            <tr>
+              <th scope="row"><%= index+1 %></th>
+              <td><%= s.name %></td>
+              <td><%= s.register_number %></td>
+              <td><%= s.status == 1 ? 'ATIVO' : 'INATIVO' %></td>
+              <td>
+                <%= link_to image_tag('edit.png'), edit_student_path(s), :class => 'quick-edit',:title => 'editar' %>
+                <%= link_to image_tag('delete.png'), student_path(s), :method => :delete,
+                            :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", 
+                            :default => 'Você tem certeza?')) },
+                            :class => '', :title => 'deletar' %>
+              </td>
+            </tr>
+        <% end %>
+      </tbody>
+    </table>
+<% else %>
+    Nenhum aluno cadastrado!
+<% end %>
+
+<div class="form-actions">
+    <%= link_to t('.new', :default => t("helpers.links.new")),
+    new_student_path,
+    :class => 'btn btn-primary btn-sm active' %>
+</div>
