@@ -16,16 +16,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 gem 'therubyracer', platforms: :ruby
 
-gem 'rails-assets-normalize-scss', '~> 3.0.1'
-gem 'rails-assets-stylish-scss', '~> 0.0.5'
-gem 'rails-assets-angular', '1.2.14'
-gem 'rails-assets-angular-resource', '1.2.14'
-gem 'rails-assets-angular-sanitize', '1.2.14'
-gem 'rails-assets-angular-animate', '1.2.14'
-gem 'rails-assets-angular-i18n', '1.2.14'
-gem 'rails-assets-restangular', '~> 1.3.1'
-gem 'rails-assets-lodash', '~> 2.4.1'
-
 gem 'simple_form', '~> 3.0.2'
 gem 'haml', '~> 4.0.4'
 
@@ -47,14 +37,13 @@ group :development do
   gem 'guard-bundler'
   gem 'guard-livereload'
   gem 'guard-migrate'
+  
+  gem 'annotate', '~> 2.6.5'
 end
 
 group :development, :test do
   gem 'rspec-rails', '~> 3.0.1'
   gem 'shoulda-matchers', '~> 2.6.1'
-
-  gem 'rails-assets-angular-mocks', '1.2.14'
-  gem 'rails-assets-angular-scenario', '1.2.14'
 
   gem 'awesome_print'
   gem 'pry-rails'

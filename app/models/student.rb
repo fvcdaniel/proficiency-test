@@ -1,4 +1,16 @@
 #encoding:utf-8
+# == Schema Information
+#
+# Table name: students
+#
+#  id              :integer          not null, primary key
+#  name            :string(255)
+#  register_number :string(255)
+#  status          :integer
+#  created_at      :datetime
+#  updated_at      :datetime
+#
+
 class Student < ActiveRecord::Base
   has_many :classrooms
   has_many :courses, :through => :classrooms
